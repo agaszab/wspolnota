@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Wspolnota</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div style="margin: auto; max-width: 400px">
+
+    <a href="/">Powrót do listy wspólnot</a>
+
+    <h2 th:text="'Nazwa wspólnoty mieszkaniowej: '+${wspolnota.nazwa_wspolnoty}"></h2>
+
+    <p th:text="'Adres wspólnoty: '+${wspolnota.adres_wspolnoty}"></p>
+
+    <p th:text="'Budynek, którym zarządza wspólnoty: '+${wspolnota.budynek}"></p>
+
+    <h3>Mieszkania należące do wspólnoty</h3>
+
+    <div th:each="mieszkania: ${wspolnota.mieszkania}">
+        <p th:text="'Adres: '+ ${mieszkania.ulica}+' '+${mieszkania.numer_mieszkania}"></p>
+    </div>
+
+
+    <form action="/addmieszkanie" method="post" th:object="${newMieszkanie}">
+        <input type="hidden" th:field="*{id_mieszkania}"/>
+
+        <div class="form-group">
+            <label>Ulica</label>
+            <input th:field="*{ulica}" type="text" class="form-control" placeholder="Wpisz ulicę"/>
+        </div>
+        <div class="form-group">
+            <label>Numer mieszkania</label>
+            <input th:field="*{numer_mieszkania}" type="text" class="form-control" placeholder="Wpisz numer mieszkaniay"/>
+        </div>
+        <div class="form-group">
+            <label>Powierzchnia</label>
+            <input th:field="*{powierzchnia_mieszkania}" type="text" class="form-control" placeholder="Wpisz powierzchnię"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+
+</div>
+
+
+</body>
+</html>
