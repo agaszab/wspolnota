@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.wspolnotamieszkaniowa.mod.Mieszkanie;
 import pl.wspolnotamieszkaniowa.mod.Osoba;
 import pl.wspolnotamieszkaniowa.mod.Plec;
-import pl.wspolnotamieszkaniowa.mod.Wspolnota;
 import pl.wspolnotamieszkaniowa.repository.MieszkanieRepository;
 import pl.wspolnotamieszkaniowa.repository.OsobaRepository;
 

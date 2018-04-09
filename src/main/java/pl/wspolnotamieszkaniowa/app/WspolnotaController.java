@@ -1,7 +1,6 @@
 package pl.wspolnotamieszkaniowa.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,7 @@ import pl.wspolnotamieszkaniowa.mod.Wspolnota;
 import pl.wspolnotamieszkaniowa.repository.MieszkanieRepository;
 import pl.wspolnotamieszkaniowa.repository.WspolnotaRepository;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 
