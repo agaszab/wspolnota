@@ -1,7 +1,7 @@
-INSERT INTO `wspolnoty`.`wspolnota` ( `adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES( "Kwiska 24","33-40","Gondow");
-INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("Kamienna 5","1-12","Krzyki");
-INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("Drobnera","21-31","Centrum");
-INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("Baltycka","1-3","Psie Pole");
+INSERT INTO `wspolnoty`.`wspolnota` ( `adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES( "Kaszubska 8","33-40","Spółdzielca");
+INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("Skwer Obrońców Helu 1","1-12","Mała Wspólnota Mieszkaniowa 'Ognisko' ");
+INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("ul. Garwolińska 6 m. 1","21-31","Szóstka");
+INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("al. Hallera 14b","Wysoka 1-3","Wspólnota Fiołkowa");
 INSERT INTO `wspolnoty`.`mieszkanie` ( `numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("23/1", 150, "Kwiska", 1);
 INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("23/2", 80, "Kwiska", 1);
 INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("25/3", 200, "Kwiska", 1);

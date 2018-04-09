@@ -14,30 +14,29 @@
 
 <div  class="container">
 
-    <div  class="text-justify" ><h1>Dodaj nową wspólnotę</h1>
+    <div  class="text-justify" ><h1>Dodaj nową osobę</h1>
 
-    <form method="post" action="/addwspolnota" th:object="${wspolnota}">
+    <form action="/addosoba" method="post" th:object="${newOsoba}">
 
         <div class="form-group">
-            <label for="nazwa_wspolnoty">Nazwa</label>
-            <input th:field="*{nazwa_wspolnoty}" type="text" class="form-control" id="nazwa_wspolnoty" placeholder="Wpisz nazwę wspólnoty"/>
+            <label>Imię</label>
+            <input th:field="*{imie}" type="text" class="form-control" placeholder="imie"/>
         </div>
-
         <div class="form-group">
-            <label for="adres_wspolnoty">Adres wspólnoty</label>
-            <input th:field="*{adres_wspolnoty}" type="text" class="form-control" id="adres_wspolnoty" placeholder="Wpisz adres"/>
+            <label>Nazwisko</label>
+            <input th:field="*{nazwisko}" type="text" class="form-control" />
         </div>
-
         <div class="form-group">
-            <label for="budynek">Budynek, którym zarządza wspólnota</label>
-            <input th:field="*{budynek}" type="text" class="form-control" id="budynek" placeholder="Wpisz adres budynku"/>
+            <label for="category">Kategoria</label>
+            <select th:field="*{plec}" class="form-control" id="category">
+                <option th:each="plec: ${plec}" th:value="${plec.name()}" th:text="${plec.name}"></option>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Dodaj</button>
-
     </form>
 
-    </div>
+</div>
 
 </div>
 </body>

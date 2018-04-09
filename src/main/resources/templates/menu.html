@@ -6,31 +6,82 @@
     <meta charset="UTF-8">
 </head>
 <body>
+<div>
+<style  th:fragment="styl">
+    body{
+        background-color: #FFFDD7;
+        align-content: center;
+    }
+    h1{margin-top: 30px;}
+    h2{margin-top: 20px;}
 
-<div th:fragment="menu">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WSPÓLNOTY  MIESZKANIOWE</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/wspolnoty">Lista wspólnot</a></li>
-      <li><a href="/mieszkania">Lista mieszkań</a></li>
-      <li><a href="/osoby">Lista mieszkańców wspólnoty</a></li>
+    .container ul {
+        background-color: #FFF;
+        width: 600px;
 
-    </ul>
-  </div>
+    }
+    .container ul li a {
+        background-color: #FFF;
+        color: #333;
+        text-align: left;
+        height: 25px;
+    }
 
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        text-align: left;
+    }
+
+    li {
+        float: left;
+        padding-right: 10px;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #111;
+        text-underline: lavender;
+        color: wheat;
+
+    }
+</style>
 </div>
-<!--
 
-<div th:fragment="menu">
-<div class="row">
-    <div class="col">Home</div>
-    <div class="col"><a href="/wspolnoty"> Lista wspólnot </a></div>
-    <div class="col"><a href="/mieszkania">Lista mieszkań</a></div>
-    <div class="col"><a href="/osoby">Lista mieszkańców wspólnoty</a></div>
+
+<div>
+<ul th:fragment="menu">
+    <li><a class="active" href="/"><img src="home.png" width="20px" style="display: inline; float: left; margin-right: 9px">WSPÓLNOTY  MIESZKANIOWE</a></li>
+    <li><a href="/wspolnoty">Lista wspólnot</a></li>
+    <li><a href="/mieszkania">Lista mieszkań</a></li>
+    <li><a href="/osoby">Lista mieszkańców wszystkich wspólnot</a></li>
+</ul></div>
+
+
+<div th:fragment="iko_mieszkania">
+<a  style="display: inline; float: left"  title="edycja danych mieszkania" href=""><img src="edit.png" width="20px"></a>
+<a style="display: inline; float: right" title="skasuj mieszkanie" href=""><img src="delete.png" width="20px"></a>
 </div>
-</div>-->
+
+<div th:fragment="iko_wspolnoty">
+    <a  style="display: inline; float: left" title="edycja danych wspólnoty" href=""><img src="edit.png" width="20px"></a>
+    <a style="display: inline; float: right" title="skasuj wspólnotę" href=""><img src="delete.png" width="20px"></a>
+</div>
+
+<div th:fragment="iko_osoby">
+    <a  style="display: inline;  float: left" title="edycja danych osoby" href=""><img src="edit.png" width="20px"></a>
+    <a style="display: inline; float: right" title="skasuj osobę" th:href="'/delosoba?id='+${osoba.id_osoby}"><img src="delete.png" width="20px"></a>
+</div>
 
 </body>
 </html>

@@ -67,4 +67,9 @@ public class Osoba {
     public void setPlec(Plec plec) {
         this.plec = plec;
     }
+
+    @Override
+    public String toString() {
+        return  mieszkanie.getUlica() +" "+mieszkanie.getNumer_mieszkania();
+    }
 }

@@ -23,7 +23,7 @@ public class HomeController {
     public String list(Model model) {
         List<Wspolnota> wspolnoty = wspolnotaRepository.findAll();
         model.addAttribute("wspolnoty", wspolnoty);
-        return "index";
+        return "szkielet";
     }
 
 
