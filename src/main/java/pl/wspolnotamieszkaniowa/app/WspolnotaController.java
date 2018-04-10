@@ -86,5 +86,36 @@ public class WspolnotaController {
     }
 
 
+
+
+    @GetMapping("/edycjawspolnoty")
+    public String dodajwspolnote (Model model, @RequestParam long id) {
+        Optional<Wspolnota> wspolnotaOptional = wspolnotaRepository.findById(id);
+        if(wspolnotaOptional.isPresent()) {
+            Wspolnota wspolnota = wspolnotaOptional.get();
+            model.addAttribute("wspolnota", wspolnota);
+            return "edit_wspolnota";
+        } else return "error";
+    }
+
+
+    @PostMapping ("/editwspolnota")
+    public String editWspolnota (Wspolnota wspolnota, @RequestParam long id) {
+
+        Optional<Wspolnota> wspolnotaOptiona = wspolnotaRepository.findById(id);
+
+        if (wspolnotaOptiona.isPresent()) {
+            Wspolnota newWspolnota = wspolnotaOptiona.get();
+            if (!wspolnota.getNazwa_wspolnoty().equals("")) { newWspolnota.setNazwa_wspolnoty(wspolnota.getNazwa_wspolnoty()); }
+            if (!wspolnota.getAdres_wspolnoty().equals("")) { newWspolnota.setAdres_wspolnoty(wspolnota.getAdres_wspolnoty()); }
+            if (!wspolnota.getBudynek().equals("")) { newWspolnota.setBudynek(wspolnota.getBudynek()); }
+            wspolnotaRepository.save(newWspolnota);
+        }
+            return "wspolnota";
+        }
+
+
+
+
 }
 

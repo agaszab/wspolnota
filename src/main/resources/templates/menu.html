@@ -69,17 +69,17 @@
 
 
 <div th:fragment="iko_mieszkania">
-<a  style="display: inline; float: left"  title="edycja danych mieszkania" href=""><img src="edit.png" width="20px"></a>
-<a style="display: inline; float: right" title="skasuj mieszkanie" href=""><img src="delete.png" width="20px"></a>
+<a  style="display: inline; float: left"  title="edycja danych mieszkania" th:href="'/edycjamieszkania?id='+${mieszkanie.id_mieszkania}"><img src="edit.png" width="20px"></a>
+<a style="display: inline; float: right" title="skasuj mieszkanie" th:href="'/delmieszkanie?id='+${mieszkanie.id_mieszkania}"><img src="delete.png" width="20px"></a>
 </div>
 
 <div th:fragment="iko_wspolnoty">
-    <a  style="display: inline; float: left" title="edycja danych wspólnoty" href=""><img src="edit.png" width="20px"></a>
-    <a style="display: inline; float: right" title="skasuj wspólnotę" href=""><img src="delete.png" width="20px"></a>
+    <a  style="display: inline; float: left" title="edycja danych wspólnoty" th:href="'/edycjawspolnoty?id='+${wspolnota.id_wspolnoty}"><img src="edit.png" width="20px"></a>
+    <a  style="display: inline; float: right" title="skasuj wspólnotę" th:href="'/delwspolnota?id='+${wspolnota.id_wspolnoty}"><img src="delete.png" width="20px"></a>
 </div>
 
 <div th:fragment="iko_osoby">
-    <a  style="display: inline;  float: left" title="edycja danych osoby" href=""><img src="edit.png" width="20px"></a>
+    <a  style="display: inline;  float: left" title="edycja danych osoby" th:href="'/edycjaosoby?id='+${osoba.id_osoby}"><img src="edit.png" width="20px"></a>
     <a style="display: inline; float: right" title="skasuj osobę" th:href="'/delosoba?id='+${osoba.id_osoby}"><img src="delete.png" width="20px"></a>
 </div>
 
