@@ -14,28 +14,18 @@
 
 <div  class="container">
 
-    <div  class="text-justify" ><h1>Edycja danych wspólnoty</h1>
+    <h1>Lista mieszkańców wszystkich wspólnot mieszkaniowych</h1>
 
-        <form method="post" action="/editwspolnota" th:object="${wspolnota}">
+    <ul class="list-group">
+           <li class="list-group-item" th:each="osoba: ${osoby}">
+                <a style="display: inline; float: left" th:href="'/osoba?id='+${osoba.id_osoby}"   th:text="${osoba.imie} +' '+${osoba.nazwisko}"></a>
+                <span style="display: inline; float: right"  th:include="menu :: iko_osoby" class="navbar navbar-default"></span>
+            </li>
+            <li class="list-group-item">
+                <a  style="display: inline; float: left" th:href="'/dodajosobe'"> <img src="../plus.png" width="20px"/>  Dodaj nową osobę</a>
 
-            <div class="form-group">
-                <label for="nazwa_wspolnoty">Nazwa</label>
-                <input th:field="*{nazwa_wspolnoty}"  type="text" class="form-control" id="nazwa_wspolnoty" placeholder="Wpisz nazwę wspólnoty"/>
-            </div>
-
-            <div class="form-group">
-                <label for="adres_wspolnoty">Adres wspólnoty</label>
-                <input th:field="*{adres_wspolnoty}"  type="text" class="form-control" id="adres_wspolnoty" placeholder="Wpisz adres"/>
-            </div>
-
-            <div class="form-group">
-                <label for="budynek">Budynek, którym zarządza wspólnota</label>
-                <input th:field="*{budynek}"  type="text" class="form-control" id="budynek" placeholder="Wpisz adres budynku"/>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Zatwierdź zmiany</button>
-
-        </form>
+            </li>
+        </ul>
 
     </div>
 

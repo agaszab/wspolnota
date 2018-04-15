@@ -1,14 +1,16 @@
-INSERT INTO `wspolnoty`.`wspolnota` ( `adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES( "Kaszubska 8","33-40","Spółdzielca");
-INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("Skwer Obrońców Helu 1","1-12","Mała Wspólnota Mieszkaniowa 'Ognisko' ");
-INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("ul. Garwolińska 6 m. 1","21-31","Szóstka");
-INSERT INTO `wspolnoty`.`wspolnota` (`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES("al. Hallera 14b","Wysoka 1-3","Wspólnota Fiołkowa");
-INSERT INTO `wspolnoty`.`mieszkanie` ( `numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("23/1", 150, "Kwiska", 1);
-INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("23/2", 80, "Kwiska", 1);
-INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("25/3", 200, "Kwiska", 1);
-INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("3/1", 150, "Drukarska", 3);
-INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("3/2", 150, "Drukarska", 3);
-INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("22/1", 90, "Bałtycka", 4);
-INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`) VALUES ("22/6", 90, "Bałtycka", 4);
+INSERT INTO `wspolnoty`.`wspolnota` (`id_wspolnoty`, `adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES(1, "Kaszubska 8","33-40","Spółdzielca");
+INSERT INTO `wspolnoty`.`wspolnota` (`id_wspolnoty`,`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES(2, "Skwer Obrońców Helu 1","1-12","Mała Wspólnota Mieszkaniowa Ognisko ");
+INSERT INTO `wspolnoty`.`wspolnota` (`id_wspolnoty`,`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES(3, "ul. Garwolińska 6 m. 1","21-31","Szóstka");
+INSERT INTO `wspolnoty`.`wspolnota` (`id_wspolnoty`,`adres_wspolnoty`,`budynek`,`nazwa_wspolnoty`) VALUES(4, "al. Hallera 14b","Wysoka 1-3","Wspólnota Fiołkowa");
+
+INSERT INTO `wspolnoty`.`mieszkanie` ( `numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("23/1", 150, "Kwiska", 1, true);
+INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("23/2", 80, "Kwiska", 1, true);
+INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("25/3", 200, "Kwiska", 1, FALSE );
+INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("3/1", 150, "Drukarska", 3, true);
+INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("3/2", 150, "Drukarska", 3, true);
+INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("22/1", 90, "Bałtycka", 4, true);
+INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("22/6", 90, "Bałtycka", 4, true);
+INSERT INTO `wspolnoty`.`mieszkanie` (`numer_mieszkania`,`powierzchnia_mieszkania`,`ulica`,`wspolnota_id_wspolnoty`,`przypisane`) VALUES ("22/6", 90, "Bałtycka", 2, true);
 INSERT INTO `wspolnoty`.`osoba` (`imie`,`nazwisko`,`plec`,`mieszkanie_id_mieszkania`) VALUES ( "Anna", "Nowak", "KOBIETA", 1);
 INSERT INTO `wspolnoty`.`osoba` (`imie`,`nazwisko`,`plec`,`mieszkanie_id_mieszkania`) VALUES ( "Piotr", "Nowak", "MEZCZYZNA", 1);
 INSERT INTO `wspolnoty`.`osoba` (`imie`,`nazwisko`,`plec`,`mieszkanie_id_mieszkania`) VALUES ( "Magdalena", "Kowal",  "KOBIETA", 2);

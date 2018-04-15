@@ -14,18 +14,27 @@
 
 <div  class="container">
 
-    <h1>Lista mieszkańców wszystkich wspólnot mieszkaniowych</h1>
+    <div  class="text-justify" ><h1>Dodaj nową osobę</h1>
 
-    <ul class="list-group">
-           <li class="list-group-item" th:each="osoba: ${osoby}">
-                <a style="display: inline; float: left" th:href="'/osoba?id='+${osoba.id_osoby}"   th:text="${osoba.imie} +' '+${osoba.nazwisko}"></a>
-                <span style="display: inline; float: right"  th:include="menu :: iko_osoby" class="navbar navbar-default"></span>
-            </li>
-            <li class="list-group-item">
-                <a  style="display: inline; float: left" th:href="'/dodajosobe'"> <img src="plus.png" width="20px"/>  Dodaj nowego mieszkańca wspólnoty</a>
+        <form action="/editosoba" method="post" th:object="${osoba}">
+            <input th:name="id" th:value="*{id_osoby}" type="hidden"/>
+            <div class="form-group">
+                <label>Imię</label>
+                <input th:field="*{imie}" type="text" class="form-control" placeholder="imie"/>
+            </div>
+            <div class="form-group">
+                <label>Nazwisko</label>
+                <input th:field="*{nazwisko}" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="category">Płeć</label>
+                <select th:field="*{plec}" class="form-control" id="category">
+                    <option th:each="plec: ${plec}" th:value="${plec.name()}" th:text="${plec.name}"></option>
+                </select>
+            </div>
 
-            </li>
-        </ul>
+            <button type="submit" class="btn btn-primary">Aktualizuj dane</button>
+        </form>
 
     </div>
 

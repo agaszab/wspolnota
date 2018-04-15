@@ -14,19 +14,19 @@
 
 <div  class="container">
 
-    <div  class="text-justify" ><h1>Lista wspólnot</h1>
+        <h2>Lista mieszkań</h2>
 
         <ul class="list-group">
-            <li class="list-group-item" th:each="wspolnota: ${wspolnoty}">
-                <a style="display: inline; float: left"  th:href="'/wspolnota?id='+${wspolnota.id_wspolnoty}" th:text="${wspolnota.nazwa_wspolnoty}"></a>
-                <span style="display: inline; float: right"  th:include="menu :: iko_wspolnoty" class="navbar navbar-default"></span>
+            <li class="list-group-item" th:each="mieszkanie: ${mieszkania}">
+                <a  style="display: inline; float: left" th:href="'/mieszkanie?id='+${mieszkanie.id_mieszkania}" th:text="${mieszkanie.ulica} +' '+${mieszkanie.numer_mieszkania}"></a>
+                <span style="display: inline; float: right"  th:include="menu :: iko_mieszkania" class="navbar navbar-default"></span>
             </li>
             <li class="list-group-item">
-                <a th:href="'/dodajwspolnote'"> <img src="plus.png" width="20px">  Dodaj nową wspólnotę</a>
+                <a th:href="'/dodajmieszkanie'"> <img src="../plus.png" width="20px">  Dodaj nowe mieszkanie</a>
             </li>
         </ul>
 
-    </div>
+</div>
 
 </div>
 </body>

@@ -8,10 +8,15 @@
 <body>
 <div>
 <style  th:fragment="styl">
-    body{
+    body {
         background-color: #FFFDD7;
         align-content: center;
+        background-image: url("dom.png");
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        min-height: 700px;
     }
+
     h1{margin-top: 30px;}
     h2{margin-top: 20px;}
 
@@ -56,7 +61,6 @@
 
     }
 </style>
-</div>
 
 
 <div>
@@ -69,18 +73,18 @@
 
 
 <div th:fragment="iko_mieszkania">
-<a  style="display: inline; float: left"  title="edycja danych mieszkania" th:href="'/edycjamieszkania?id='+${mieszkanie.id_mieszkania}"><img src="edit.png" width="20px"></a>
-<a style="display: inline; float: right" title="skasuj mieszkanie" th:href="'/delmieszkanie?id='+${mieszkanie.id_mieszkania}"><img src="delete.png" width="20px"></a>
+<a  style="display: inline; float: left"  title="edycja danych mieszkania" th:href="'edycjamieszkania?id='+${mieszkanie.id_mieszkania}"><img src="../edit.png" width="20px"></a>
+<a style="display: inline; float: right" title="skasuj mieszkanie" th:href="'delmieszkanie?id='+${mieszkanie.id_mieszkania}"><img src="../delete.png" width="20px"></a>
 </div>
 
 <div th:fragment="iko_wspolnoty">
-    <a  style="display: inline; float: left" title="edycja danych wspólnoty" th:href="'/edycjawspolnoty?id='+${wspolnota.id_wspolnoty}"><img src="edit.png" width="20px"></a>
-    <a  style="display: inline; float: right" title="skasuj wspólnotę" th:href="'/delwspolnota?id='+${wspolnota.id_wspolnoty}"><img src="delete.png" width="20px"></a>
+    <a  style="display: inline; float: left" title="edycja danych wspólnoty" th:href="'edycjawspolnoty?id='+${wspolnota.id_wspolnoty}"><img src="../edit.png" width="20px"></a>
+    <a  style="display: inline; float: right" title="skasuj wspólnotę" th:href="'delwspolnota?id='+${wspolnota.id_wspolnoty}"><img src="../delete.png" width="20px"></a>
 </div>
 
 <div th:fragment="iko_osoby">
-    <a  style="display: inline;  float: left" title="edycja danych osoby" th:href="'/edycjaosoby?id='+${osoba.id_osoby}"><img src="edit.png" width="20px"></a>
-    <a style="display: inline; float: right" title="skasuj osobę" th:href="'/delosoba?id='+${osoba.id_osoby}"><img src="delete.png" width="20px"></a>
+    <a  style="display: inline;  float: left" title="edycja danych osoby" th:href="'edycjaosoby?id='+${osoba.id_osoby}"><img src="../edit.png" width="20px"></a>
+    <a style="display: inline; float: right" title="skasuj osobę" th:href="'delosoba?id='+${osoba.id_osoby}"><img src="../delete.png" width="20px"></a>
 </div>
 
 </body>

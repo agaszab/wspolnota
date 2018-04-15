@@ -21,9 +21,9 @@ public class HomeController {
 
     @GetMapping("/")
     public String list(Model model) {
-        List<Wspolnota> wspolnoty = wspolnotaRepository.findAll();
-        model.addAttribute("wspolnoty", wspolnoty);
-        return "szkielet";
+     //   List<Wspolnota> wspolnoty = wspolnotaRepository.findAll();
+     //   model.addAttribute("wspolnoty", wspolnoty);
+        return "index";
     }
 
 

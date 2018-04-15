@@ -14,29 +14,19 @@
 
 <div  class="container">
 
-    <div  class="text-justify" ><h1>Dodaj nową osobę</h1>
+    <div  class="text-justify" ><h1>Lista wspólnot</h1>
 
-    <form action="/addosoba" method="post" th:object="${newOsoba}">
+        <ul class="list-group">
+            <li class="list-group-item" th:each="wspolnota: ${wspolnoty}">
+                <a style="display: inline; float: left"  th:href="'/wspolnota?id='+${wspolnota.id_wspolnoty}" th:text="${wspolnota.nazwa_wspolnoty}"></a>
+                <span style="display: inline; float: right"  th:include="menu :: iko_wspolnoty" class="navbar navbar-default"></span>
+            </li>
+            <li class="list-group-item">
+                <a th:href="'/dodajwspolnote'"> <img src="../plus.png" width="20px">  Dodaj nową wspólnotę</a>
+            </li>
+        </ul>
 
-        <div class="form-group">
-            <label>Imię</label>
-            <input th:field="*{imie}" type="text" class="form-control" placeholder="imie"/>
-        </div>
-        <div class="form-group">
-            <label>Nazwisko</label>
-            <input th:field="*{nazwisko}" type="text" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label for="category">Kategoria</label>
-            <select th:field="*{plec}" class="form-control" id="category">
-                <option th:each="plec: ${plec}" th:value="${plec.name()}" th:text="${plec.name}"></option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Dodaj</button>
-    </form>
-
-</div>
+    </div>
 
 </div>
 </body>

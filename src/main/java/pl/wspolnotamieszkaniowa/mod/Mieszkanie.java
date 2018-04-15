@@ -14,6 +14,10 @@ public class Mieszkanie {
     private String ulica;
     private int powierzchnia_mieszkania;
 
+
+
+    private boolean przypisane;
+
     @ManyToOne
     private Wspolnota wspolnota;
 
@@ -23,14 +27,23 @@ public class Mieszkanie {
     public Mieszkanie() {
     }
 
-    public Mieszkanie(String numer_mieszkania, String ulica, int powierzchnia_mieszkania, Wspolnota wspolnota, List<Osoba> mieszkancy) {
+
+    public boolean isPrzypisane() {
+        return przypisane;
+    }
+
+    public Mieszkanie(String numer_mieszkania, String ulica, int powierzchnia_mieszkania, boolean przypisane, Wspolnota wspolnota, List<Osoba> mieszkancy) {
         this.numer_mieszkania = numer_mieszkania;
         this.ulica = ulica;
         this.powierzchnia_mieszkania = powierzchnia_mieszkania;
+        this.przypisane = przypisane;
         this.wspolnota = wspolnota;
         this.mieszkancy = mieszkancy;
     }
 
+    public void setPrzypisane(boolean przypisane) {
+        this.przypisane = przypisane;
+    }
     public String getUlica() {
         return ulica;
     }

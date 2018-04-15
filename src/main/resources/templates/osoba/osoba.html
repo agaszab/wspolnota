@@ -12,22 +12,18 @@
 <body>
 <ul th:include="menu :: menu" class="navbar navbar-default"></ul>
 
-<div  class="container">
+<br  class="container">
 
-        <h2>Lista mieszkań</h2>
+    <div  class="text-justify" >
 
-        <ul class="list-group">
-            <li class="list-group-item" th:each="mieszkanie: ${mieszkania}">
-                <a  style="display: inline; float: left" th:href="'/mieszkanie?id='+${mieszkanie.id_mieszkania}" th:text="${mieszkanie.ulica} +' '+${mieszkanie.numer_mieszkania}"></a>
-                <span style="display: inline; float: right"  th:include="menu :: iko_mieszkania" class="navbar navbar-default"></span>
-            </li>
-            <li class="list-group-item">
-                <a th:href="'/dodajmieszkanie'"> <img src="plus.png" width="20px">  Dodaj nowe mieszkanie</a>
-            </li>
-        </ul>
+        <h1 th:text="${osoba.imie}+' '+${osoba.nazwisko}"></h1>
 
-</div>
+        <p th:text="'Płeć: '+${osoba.plec}"></p>
 
+        <p th:text="'Miejsce zameldowania : '+${osoba.toString()}"></p>
+
+    </div>
+</br><a href="javascript:history.back()"><< powrót do poprzedniej strony</a>
 </div>
 </body>
 </html>
