@@ -59,8 +59,8 @@ public class MieszkanieController {
     }
 
     @PostMapping("/addmieszkanieluz")
-    public String addMieszkanie(Mieszkanie mieszkanie, Wspolnota wspolnota, @RequestParam long id) {
-        Optional<Mieszkanie> mieszkanieOptiona = mieszkanieRepository.findById(id);
+    public String addMieszkanie(Mieszkanie mieszkanie, Wspolnota wspolnota, @RequestParam long id_mieszkania) {
+        Optional<Mieszkanie> mieszkanieOptiona = mieszkanieRepository.findById(id_mieszkania);
         if (mieszkanieOptiona.isPresent()) {
             Mieszkanie newMieszkanie = mieszkanieOptiona.get();
             newMieszkanie.setPrzypisane(true);

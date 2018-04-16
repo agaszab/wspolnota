@@ -37,10 +37,10 @@
           <h2>Dodaj mieszkanie z listy</h2>
           <form action="/addmieszkanieluz" method="post" th:object="${newMieszkanie}">
               <input type="hidden"  th:field="*{wspolnota}"/>
-              <input type="hidden" th:field="*{id_mieszkania}"/>
+
               <div class="form-group">
                   <label for="mieszkanieLuz">Mieszkania bez przypisania do wspólnoty: </label>
-                  <select class="form-control" id="mieszkanieLuz">
+                  <select class="form-control" id="mieszkanieLuz"  th:field="*{id_mieszkania}">
                       <option value="" text=""></option>
                       <option th:each="newMieszkanie: ${mieszkaniaLuzem}" th:value="${newMieszkanie.id_mieszkania}" th:text="${newMieszkanie.ulica}+' '+${newMieszkanie.numer_mieszkania}"></option>
                   </select>
@@ -48,6 +48,9 @@
               </div>
               <button type="submit" class="btn btn-primary">Przypisz mieszkanie do wspólnoty</button>
           </form>
+
+
+
 
 
           <h2>Dodaj nowe mieszkanie do wspólnoty</h2>

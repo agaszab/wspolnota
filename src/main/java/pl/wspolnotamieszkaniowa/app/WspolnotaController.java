@@ -95,7 +95,9 @@ public class WspolnotaController {
 
     @PostMapping ("/addwspolnota")
     public String addWspolnota (Wspolnota wspolnota){
-        if (!wspolnota.getNazwa_wspolnoty().equals("") && !wspolnota.getAdres_wspolnoty().equals("")) {
+        if (!wspolnota.getAdres_wspolnoty().equals("")) {
+            if (wspolnota.getNazwa_wspolnoty().equals(""))
+            {wspolnota.setNazwa_wspolnoty(wspolnota.getAdres_wspolnoty());} else {wspolnota.setNazwa_wspolnoty(wspolnota.getNazwa_wspolnoty());}
             wspolnotaRepository.save(wspolnota);
             return "redirect:/wspolnoty";
         } else return "brakdanych";
