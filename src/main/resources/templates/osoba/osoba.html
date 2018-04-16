@@ -12,7 +12,7 @@
 <body>
 <ul th:include="menu :: menu" class="navbar navbar-default"></ul>
 
-<br  class="container">
+<div  class="container">
 
     <div  class="text-justify" >
 
@@ -22,8 +22,10 @@
 
         <p th:text="'Miejsce zameldowania : '+${osoba.toString()}"></p>
 
+        </br><a href="javascript:history.back()"><< powrót do poprzedniej strony</a>
+
     </div>
-</br><a href="javascript:history.back()"><< powrót do poprzedniej strony</a>
+
 </div>
 </body>
 </html>
